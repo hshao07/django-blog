@@ -1,7 +1,7 @@
 {% extends "base.html" %}{% block content %}
   <h1>Recent Posts</h1>
   {% comment %} here is where the query happens {% endcomment %}
-  {% for post in posts %}
+  {% for post in post_list %}
   <div class="post">
     <h2>
        <a href="{% url 'blog_detail' post.pk %}">{{ post }}</a>
@@ -13,7 +13,7 @@
       {{ post.text }}
     </div>
     <ul class="categories">
-      {% for category in post.categories.all %}
+      {% for category in object.categories.all %}
         <li>{{ category }}</li>
       {% endfor %}
     </ul>
