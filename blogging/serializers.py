@@ -16,5 +16,5 @@ class PostSerializer(serializers.HyperlinkedModelSerializer):
 
 class CategorySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Post
+        model = Category
         fields = ["name", "description"]
