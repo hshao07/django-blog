@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from blogging.models import Post
+from blogging.models import Post,Category
 from django.contrib.auth.models import User
 from django.template import loader
 from django.http import HttpResponse, HttpResponseRedirect, Http404
@@ -38,6 +38,6 @@ class PostViewSet(viewsets.ModelViewSet):
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
-    queryset = Post.objects.order_by("name")
+    queryset = Category.objects.order_by("name")
     serializer_class = CategorySerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
